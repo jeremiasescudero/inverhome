@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens for the application.
+ * The palette is intentionally sober: one accent colour plus five semantic
+ * status tones. Status is never communicated by colour alone (see StatusBadge).
+ */
+@theme {
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #d9e6ff;
+  --color-brand-200: #bcd2ff;
+  --color-brand-300: #8eb4ff;
+  --color-brand-400: #598cfb;
+  --color-brand-500: #3566f0;
+  --color-brand-600: #2149d6;
+  --color-brand-700: #1c3bab;
+  --color-brand-800: #1c3488;
+  --color-brand-900: #1b2f6c;
+
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Keyboard focus must stay visible across the whole app. */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+
+  th {
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .app-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-slate-300) transparent;
+  }
+}
