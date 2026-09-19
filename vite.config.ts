@@ -16,5 +16,7 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     css: false,
     include: ['src/**/*.test.{ts,tsx}'],
+    // Lazy chart routes and jsdom renders exceed the 5s default on slower disks.
+    testTimeout: 20000,
   },
 })

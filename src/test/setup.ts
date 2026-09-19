@@ -1,4 +1,9 @@
 import '@testing-library/jest-dom/vitest'
+import { configure } from '@testing-library/dom'
+
+// Below vitest's testTimeout, so a missing element reports as such instead of
+// surfacing as an opaque test timeout.
+configure({ asyncUtilTimeout: 10000 })
 
 // jsdom has no layout engine; recharts' ResponsiveContainer needs these to mount.
 class ResizeObserverStub {

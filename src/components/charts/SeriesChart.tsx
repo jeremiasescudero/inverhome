@@ -21,7 +21,7 @@ export interface SeriesSpec {
 export interface SeriesChartProps {
   data: Record<string, string | number>[]
   series: SeriesSpec[]
-  /** Datum field used for the category axis. */
+  /** Datum field used for the category axis. **/
   labelKey?: string
   height?: number
   formatValue?: (value: number) => string
